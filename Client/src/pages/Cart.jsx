@@ -2,10 +2,21 @@ import React, { useContext, useEffect, useState } from 'react'
 import { ShopContext } from '../context/ShopContext'
 import Title from "../components/Title"
 import { assets } from '../assets/assets'
+import { toast } from 'react-toastify'
 
 function Cart() {
-  const { products, currency, cartItems, updateQuantity, navigate, getCartAmount, delivery_fee } = useContext(ShopContext)
+  const { products, currency, cartItems, updateQuantity, token, navigate, getCartAmount, delivery_fee } = useContext(ShopContext)
   const [cartData, setCartData] = useState([])
+
+  const handlePlaceOrderButton = async () => {
+    if(!token){
+      navigate('/login')
+      toast.error("Login first ")
+    }
+    else{
+      navigate('/place-order')
+    }
+  }
 
 
   useEffect(() => {
@@ -100,7 +111,7 @@ function Cart() {
             </div>
             <div className=' flex justify-end'>
 
-              <button onClick={() => navigate('/place-order')} className='bg-black text-white px-3 py-1 rounded-sm mt-4'>PROCEED TO CHECKOUT</button>
+              <button onClick={() => handlePlaceOrderButton()} className='bg-black text-white px-3 py-1 rounded-sm mt-4'>PROCEED TO CHECKOUT</button>
             </div>
 
 

@@ -17,13 +17,16 @@ import WomenCategory from "./pages/WomenCategory"
 import KidsCategory from "./pages/KidsCategory"
 import AuthForm from "./components/AuthForm"
 
+import ScrollToTop from "./components/ScrollToTop"
+
 const App = () => {
   return (
     <>
       <div className="">
         <ToastContainer />
         <Navbar />
-        <Routes>
+        <ScrollToTop />
+        <Routes>          
           <Route path="/" element={<Home />} />
           <Route path="/product/:productId" element={<Product />} />
           <Route path="/cart" element={<Cart />} />
