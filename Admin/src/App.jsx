@@ -6,18 +6,18 @@ import Add from './pages/Add'
 import List from './pages/List'
 import Orders from './pages/Orders'
 import Login from './components/Login'
-import {ToastContainer} from 'react-toastify'
+import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 export const backend_url = import.meta.env.VITE_BACKEND_URL
-export const currency='$'
+export const currency = '$'
 
 function App() {
 
-  const [token, setToken] = useState(localStorage.getItem("token")?localStorage.getItem("token"): "")
-  useEffect(()=>{
-    localStorage.setItem("token",token)
-  },[token])
+  const [token, setToken] = useState(localStorage.getItem("token") ? localStorage.getItem("token") : "")
+  useEffect(() => {
+    localStorage.setItem("token", token)
+  }, [token])
 
 
 
@@ -35,7 +35,7 @@ function App() {
               <Routes>
                 <Route element={<Add token={token} />} path='/add' />
                 <Route element={<List token={token} />} path='/list' />
-                <Route path='/orders' element={<Orders token={token} />} />
+                <Route element={<Orders token={token} />} path='/orders' />
               </Routes>
             </div>
           </div>

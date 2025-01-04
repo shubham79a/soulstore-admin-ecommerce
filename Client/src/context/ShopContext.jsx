@@ -86,7 +86,7 @@ const ShopContextProvider = (props) => {
                     }
                 }
                 catch (error) {
-                    console.error();
+                    console.error(error);
                 }
 
             }
@@ -112,7 +112,7 @@ const ShopContextProvider = (props) => {
         try {
 
             const response = await axios.post(backend_URL + '/api/cart/get', {}, { headers: { token } })
-            if(response.data.success){
+            if (response.data.success) {
                 setCartItems(response.data.cartData)
             }
 
@@ -120,6 +120,29 @@ const ShopContextProvider = (props) => {
             console.log(error);
             toast.error(error.message)
         }
+    }
+    const getCartAmount = () => {
+        let totalAmount = 0;
+        for (const items in cartItems) {
+            let productData = products.find((product) => product._id === items)
+            for (const item in cartItems[items]) {
+                try {
+                    if (cartItems[items][item] > 0) {
+
+                        totalAmount += parseInt(cartItems[items][item]) * productData.price
+                    }
+                    else {
+                        totalAmount += 0
+                    }
+                }
+                catch (error) {
+                    console.log(error);
+
+                }
+            }
+
+        }
+        return totalAmount
     }
 
 
@@ -151,7 +174,8 @@ const ShopContextProvider = (props) => {
         token,
         setToken,
         backend_URL,
-        navigate
+        navigate,
+        getCartAmount,
 
 
     }
