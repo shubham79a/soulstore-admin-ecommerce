@@ -1,8 +1,7 @@
 import React, { createContext, useEffect, useState } from "react"
 
 import { toast } from "react-toastify";
-import { menCategory } from "../assets/assets";
-import { womenCategory } from "../assets/assets";
+
 import { heroSectionImages } from "../assets/assets"
 
 import { useNavigate } from 'react-router-dom';
@@ -160,8 +159,7 @@ const ShopContextProvider = (props) => {
         heroSectionImages,
 
         products,
-        menCategory,
-        womenCategory,
+        
         currency,
         delivery_fee,
         search,
