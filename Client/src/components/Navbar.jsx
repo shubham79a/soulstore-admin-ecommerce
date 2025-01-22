@@ -7,7 +7,7 @@ import axios from "axios"
 
 function Navbar() {
     const [visible, setVisible] = useState(false)
-    const { getCartCount, search, setSearch, token, setToken, setCartItems } = useContext(ShopContext)
+    const { getCartCount, search, setSearch, token, setToken, setCartItems, userData, setUserData } = useContext(ShopContext)
     const navigate = useNavigate()
     const [show, setShow] = useState(true)
 
@@ -68,19 +68,18 @@ function Navbar() {
 
                         </div>
                         {token ?
-                            <div className="hidden sm:contents"><p>User</p></div>
-                            : <div className="hidden sm:contents"><p>Login</p></div>
+                            <div className="hidden sm:contents"><p>{ }</p></div>
+                            : <div onClick={() => token ? null : navigate('/login')} className="hidden sm:contents cursor-pointer"><p>Login</p></div>
                         }
                         {
                             token &&
                             <div className="group relative" >
-                                <img src={assets.dropdown_icon} alt="" className="w-3 pt-0.5 cursor-pointer" />
+                                <img src={assets.dropdown_icon} alt="" className="w-4 pt-0.5 cursor-pointer" />
                                 <div className="group-hover:block hidden absolute right-0 px-4 dropdown-menu opacity-100" >
-                                    <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded hover:block">
+                                    <div className="flex flex-col gap-2 w-36 py-1  px-5 bg-slate-100 text-gray-500 rounded hover:block">
                                         <p onClick={handleLogout} className="cursor-pointer hover:text-black" >Logout</p>
-                                        <p className="cursor-pointer hover:text-black " >My Profile</p>
-                                        <p className="cursor-pointer hover:text-black" >Orders</p>
 
+                                        <p onClick={() => navigate('/orders')} className="cursor-pointer hover:text-black" >Orders</p>
                                     </div>
                                 </div>
 

@@ -20,6 +20,7 @@ const ShopContextProvider = (props) => {
     const [products, setProducts] = useState([])
 
     const [cartItems, setCartItems] = useState({});
+    const [userData, setUserData] = useState('')
 
     const getProducts = async () => {
         try {
@@ -29,7 +30,6 @@ const ShopContextProvider = (props) => {
             }
             else {
                 toast.error(response.data.message)
-
             }
         } catch (error) {
             console.log(error)
@@ -41,6 +41,17 @@ const ShopContextProvider = (props) => {
     useEffect(() => {
         getProducts()
     }, [])
+
+    const getUserDetails = async () => {
+        try {
+            const { data } = await axios.post(backend_URL + '/api/user/user-details', {}, { headers: { token: token } })
+            setUserData(data.userData)
+            console.log(data);
+
+        } catch (error) {
+            toast.error(error.message)
+        }
+    }
 
 
     const addToCart = async (itemId, size) => {
@@ -149,6 +160,7 @@ const ShopContextProvider = (props) => {
         if (!token && localStorage.getItem("token")) {
             setToken(localStorage.getItem("token"))
             getUserCart(localStorage.getItem('token'))
+            getUserDetails()
         }
 
     }, [])
@@ -159,7 +171,7 @@ const ShopContextProvider = (props) => {
         heroSectionImages,
 
         products,
-        
+
         currency,
         delivery_fee,
         search,
@@ -174,6 +186,8 @@ const ShopContextProvider = (props) => {
         backend_URL,
         navigate,
         getCartAmount,
+        getUserDetails,
+        userData, setUserData
 
 
     }

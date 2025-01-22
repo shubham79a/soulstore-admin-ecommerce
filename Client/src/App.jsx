@@ -17,6 +17,7 @@ import MenCategoryProduct from "./pages/MenCategoryProduct"
 
 
 import ScrollToTop from "./components/ScrollToTop"
+import Verify from "./pages/Verify"
 
 const App = () => {
   return (
@@ -25,7 +26,7 @@ const App = () => {
         <ToastContainer />
         <Navbar />
         <ScrollToTop />
-        <Routes>          
+        <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/product/:productId" element={<Product />} />
           <Route path="/cart" element={<Cart />} />
@@ -33,9 +34,10 @@ const App = () => {
           <Route path="/place-order" element={<PlaceOrder />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/collection" element={<Collection />} />
-          
+
           <Route path="/:category/:productType" element={<MenCategoryProduct />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/verify" element={<Verify />} />
         </Routes>
         <Footer />
       </div>

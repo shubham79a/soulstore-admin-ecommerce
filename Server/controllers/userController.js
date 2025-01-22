@@ -50,7 +50,7 @@ const registerUser = async (req, res) => {
 
         // token
         const token = createToken(user._id)
-        res.json({ success: true, token, message: "Account Created"  })
+        res.json({ success: true, token, message: "Account Created" })
         console.log(token);
 
 

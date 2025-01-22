@@ -12,7 +12,7 @@ function Login() {
   const [password, setPassword] = useState("");
 
 
-  const { token, setToken, backend_URL } = useContext(ShopContext)
+  const { token, setToken, backend_URL,getUserDetails, } = useContext(ShopContext)
   const navigate = useNavigate()
 
   const submitHandler = async (e) => {
@@ -25,6 +25,7 @@ function Login() {
           localStorage.setItem("token", response.data.token)
           // console.log(response.data)
           toast.success(response.data.message)
+          getUserDetails()
         }
         else {
           toast.error(response.data.message)
@@ -34,6 +35,7 @@ function Login() {
         if (response.data.success) {
           setToken(response.data.token)
           localStorage.setItem("token", response.data.token)
+          getUserDetails()
         }
         else {
           toast.error(response.data.message)
