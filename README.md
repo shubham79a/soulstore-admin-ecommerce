@@ -109,5 +109,5 @@ npm start
 This project is open-source under the MIT License.
 
 ## ✨ Author
-### Made with ❤️ by @shubham79a
+### Made with ❤️ by [@shubham79a](https://github.com/shubham79a/)
 ### 🔗 [Connect on LinkedIn](https://www.linkedin.com/in/shubham-kumar-894799290/)
