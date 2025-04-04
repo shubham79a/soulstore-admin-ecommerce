@@ -32,6 +32,54 @@ A fully functional, responsive e-commerce platform with a centralized admin syst
 - **Stripe & Razorpay** — Secure online payment gateways
 - **Cloudinary** — For efficient image storage and handling
 
+
+### Database
+- **MongoDB**
+
+
+### Authentication
+- **JWT**
+- **bcrypt**
+
+
+### API Handling
+- **Axios**
+
+### Hosting
+- **Vercel**
+
+---
+
+
+## 🎨 UI 
+The frontend UI is fully responsive and animated for a smooth experience:
+
+- **✨ Built with React.js & Tailwind CSS – Ensures a fast and modern design.**
+- **✨ Fully Responsive – Designed with a mobile-first approach, ensuring a seamless experience on desktops, tablets, and mobile devices.**
+
+📌 Animations improve user experience by making transitions feel natural and smooth. The UI is designed to keep users engaged while generating images in real time.
+
+---
+
+## 🔑 Authentication System
+The platform includes secure user authentication to protect user data:
+
+- **✅ JWT-based Authentication – Securely verifies users and manages sessions.**
+- **✅ Password Encryption – Uses bcrypt to store hashed passwords securely.**
+- **✅ Role-Based Access – Restricts access to admin-only features for managing subscription plans.**
+
+---
+
+
+## 💳 Payment Integration
+The platform is integrated with Razorpay & Stripe for seamless transactions:
+
+- **✅ Secure Payment Processing – Users can purchase credits using UPI, credit/debit cards, and net banking.**
+- **✅ Automatic Credit Update – After a successful payment, the user's can visit my order page to view their orders.**
+- **✅ Order History – Users can track their past purchases and view invoices.**
+
+🔗 Payments are encrypted to ensure safe transactions and instant credit top-ups.
+
 ---
 
 ## 📂 Folder Structure (High-level)
@@ -105,8 +153,13 @@ npm start
 ### Frontend: http://localhost:3000
 ### Backend: http://localhost:5000
 
+--- 
+
 ## 🛡️ License
 This project is open-source under the MIT License.
+
+
+---
 
 ## ✨ Author
 ### Made with ❤️ by [@shubham79a](https://github.com/shubham79a/)
