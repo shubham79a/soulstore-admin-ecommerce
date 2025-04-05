@@ -150,8 +150,8 @@ cd client
 npm start
 ```
 
-### Frontend: http://localhost:3000
-### Backend: http://localhost:5000
+#### Frontend: http://localhost:5173
+#### Backend: http://localhost:3000
 
 --- 
 
@@ -162,5 +162,5 @@ This project is open-source under the MIT License.
 ---
 
 ## ✨ Author
-### Made with ❤️ by [@shubham79a](https://github.com/shubham79a/)
-### 🔗 [Connect on LinkedIn](https://www.linkedin.com/in/shubham-kumar-894799290/)
+#### Made with ❤️ by [@shubham79a](https://github.com/shubham79a/)
+#### 🔗 [Connect on LinkedIn](https://www.linkedin.com/in/shubham-kumar-894799290/)
