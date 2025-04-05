@@ -2,7 +2,7 @@
 
 
 import logo from './logo.png'
-
+import hero_image from "./hero_img.png"
 import cart_icon from './cart_icon.png'
 import bin_icon from './bin_icon.png'
 import dropdown_icon from './dropdown_icon.png'
